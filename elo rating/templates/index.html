@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elo Rating Calculator by Archie</title>
+</head>
+<body>
+    <h1>Elo Rating Calculator by Archie</h1>
+
+    <form method="POST">
+        <label>Player A rating:</label>
+        <input type="number" name="ra" value="1000" required>
+
+        <label>Player B rating:</label>
+        <input type="number" name="rb" value="1000" required>
+
+        <label>Player A's result:</label>
+        <select name="result">
+            <option value="1">Win (1)</option>
+            <option value="0">Loss (0)</option>
+            <option value="0.5">Draw (0.5)</option>
+        </select>
+
+        <button type="submit">Calculate Elo</button>
+    </form>
+
+    {% if new_ra is not none and new_rb is not none %}
+        <h2>Updated Ratings</h2>
+        <p>Player A: {{ new_ra }}</p>
+        <p>Player B: {{ new_rb }}</p>
+    {% endif %}
+</body>
+</html>
